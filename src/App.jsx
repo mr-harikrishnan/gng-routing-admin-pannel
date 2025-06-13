@@ -1,44 +1,45 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AsideMenuBar from "./Component/AsideMenuBar";
-import NavBar from "./Component/NavBar";
-import Users from "./Component/Users";
-import Products from './Component/Products'
-import DashBoard from "./Component/DashBoard";
+import AsideMenuBar from "./Component/AsideMenuBar/AsideMenuBar";
+import NavBar from "./Component/NavBar/NavBar";
+import Users from "./Component/ContentComponent/Users/Users";
+import Products from "./Component/ContentComponent/Products/Products";
+import DashBoard from "./Component/ContentComponent/DashBoard/DashBoard";
+import UserCreate from "./Component/ContentComponent/Users/UserCreate";
+import { useState } from "react";
+import Veiw from "./Component//Veiw/Veiw";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <div className="min-h-screen w-full ">
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
-                <div className="w-[20%] " >
-                    <AsideMenuBar></AsideMenuBar>
-                </div>
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
 
-                <div className="dasboard-content-div md:w-[80%] md:ml-[20%] ">
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen w-full ">
+        <div className="w-[10%] ">
+          <AsideMenuBar
+            isSidebarOpen={isSideBarOpen}
+            onCloseSidebar={() => setIsSideBarOpen(false)}
+          />
+        </div>
 
-                    <NavBar></NavBar>
+        <div className="dasboard-content-div md:w-[85%] md:ml-[15%] ">
+          <NavBar onToggleSideBar={toggleSideBar}></NavBar>
 
-                    <div className="dasboard-content">
-
-                        <Routes>
-
-                            <Route path="/" element={ <DashBoard></DashBoard>} />
-                            <Route path="/user" element={ <Users></Users> }/>
-                            <Route path="/products" element={<Products></Products> }/>
-
-                            
-
-                        </Routes>
-                       
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-        </BrowserRouter>
-    )
+          <div className="dasboard-content">
+            <Routes>
+              <Route path="/" element={<DashBoard></DashBoard>} />
+              <Route path="/users" element={<Users></Users>} />
+              <Route path="/products" element={<Products></Products>} />
+              <Route path="/user-create" element={<UserCreate></UserCreate>}></Route>
+              <Route path="/veiw/:id" element={<Veiw></Veiw>}></Route>
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
 export default App;

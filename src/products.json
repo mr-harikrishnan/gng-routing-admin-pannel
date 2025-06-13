@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Nike Air MX Super 2500 - Red",
+    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 39,
+    "originalPrice": 699,
+    "discountedPrice": 449,
+    "rating": 5.0,
+    "ratingStars": 5,
+    "badge": "39% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Adidas RunBoost 3.0 - White",
+    "image": "https://images.unsplash.com/photo-1606813909355-d1824f0382e2?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 25,
+    "originalPrice": 799,
+    "discountedPrice": 599,
+    "rating": 4.5,
+    "ratingStars": 4,
+    "badge": "25% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Puma Street Smash - Black",
+    "image": "https://images.unsplash.com/photo-1586796678437-1c09e187b9f0?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 30,
+    "originalPrice": 999,
+    "discountedPrice": 699,
+    "rating": 4.0,
+    "ratingStars": 4,
+    "badge": "30% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Reebok Flex Pro - Blue",
+    "image": "https://images.unsplash.com/photo-1618354691327-d8d19f1bd206?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 35,
+    "originalPrice": 749,
+    "discountedPrice": 487,
+    "rating": 4.8,
+    "ratingStars": 5,
+    "badge": "35% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 5,
+    "title": "New Balance 997H - Grey",
+    "image": "https://images.unsplash.com/photo-1616627453989-869d85a13d69?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 28,
+    "originalPrice": 850,
+    "discountedPrice": 612,
+    "rating": 4.2,
+    "ratingStars": 4,
+    "badge": "28% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Nike Air Jordan Retro - Black/Red",
+    "image": "https://images.unsplash.com/photo-1587750055284-82d73c34f3f7?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 40,
+    "originalPrice": 1199,
+    "discountedPrice": 719,
+    "rating": 5.0,
+    "ratingStars": 5,
+    "badge": "40% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Vans Classic Slip-On - Checkered",
+    "image": "https://images.unsplash.com/photo-1618355007027-62735c655dd7?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 20,
+    "originalPrice": 599,
+    "discountedPrice": 479,
+    "rating": 4.3,
+    "ratingStars": 4,
+    "badge": "20% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Converse Chuck Taylor - White",
+    "image": "https://images.unsplash.com/photo-1593032465171-8b59aa8e6d3a?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 18,
+    "originalPrice": 649,
+    "discountedPrice": 532,
+    "rating": 4.0,
+    "ratingStars": 4,
+    "badge": "18% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Asics Gel-Lyte - Neon Green",
+    "image": "https://images.unsplash.com/photo-1589987601058-84294d3a190c?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 32,
+    "originalPrice": 1050,
+    "discountedPrice": 714,
+    "rating": 4.6,
+    "ratingStars": 5,
+    "badge": "32% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Skechers GoRun - Sky Blue",
+    "image": "https://images.unsplash.com/photo-1600185365973-4b54e3e4cb7f?auto=format&fit=crop&w=500&q=60",
+    "discountPercentage": 22,
+    "originalPrice": 699,
+    "discountedPrice": 545,
+    "rating": 4.1,
+    "ratingStars": 4,
+    "badge": "22% OFF",
+    "cta": {
+      "label": "Add to cart",
+      "icon": "shopping-cart",
+      "href": "#"
+    }
+  }
+]
