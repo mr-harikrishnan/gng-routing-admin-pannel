@@ -1,15 +1,14 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-function AsideMenuBar({ isSideBarOpen,onCloseSidebar  }) {
+function AsideMenuBar({ isSideBarOpen, onCloseSidebar }) {
   const asideMenuBarRef = useRef();
 
   return (
     <aside
       id="default-sidebar"
-      className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform transform ${
-        isSideBarOpen ? "translate-x-0" : "-translate-x-full"
-      } md:translate-x-0 md:w-[15%]`}
+      className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform transform ${isSideBarOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0 md:w-[15%]`}
       aria-label="Sidebar"
       ref={asideMenuBarRef}
     >
@@ -43,8 +42,8 @@ function AsideMenuBar({ isSideBarOpen,onCloseSidebar  }) {
 
         <ul className="space-y-2 font-medium">
           <li>
-            <a
-              href="#"
+            <div
+              
               className="flex items-center p-2  rounded-lg text-white  hover:bg-gray-700 group"
             >
               <svg
@@ -60,12 +59,12 @@ function AsideMenuBar({ isSideBarOpen,onCloseSidebar  }) {
               <Link to={"/"}>
                 <span className="ms-3 text-white ">Dashboard</span>
               </Link>
-            </a>
+            </div>
           </li>
 
           <li>
-            <a
-              href="#"
+            <div
+              
               className="flex items-center p-2 rounded-lg text-white  hover:bg-gray-700 group"
             >
               <svg
@@ -81,11 +80,11 @@ function AsideMenuBar({ isSideBarOpen,onCloseSidebar  }) {
               <Link to={"/users"}>
                 <span className="ms-3 text-white ">Users</span>
               </Link>
-            </a>
+            </div>
           </li>
           <li>
-            <a
-              href="#"
+            <div
+              
               className="flex items-center p-2 rounded-lg text-white  hover:bg-gray-700 group"
             >
               <svg
@@ -101,7 +100,7 @@ function AsideMenuBar({ isSideBarOpen,onCloseSidebar  }) {
               <Link to={"/products"}>
                 <span className="ms-3 text-white ">Products</span>
               </Link>
-            </a>
+            </div>
           </li>
         </ul>
       </div>

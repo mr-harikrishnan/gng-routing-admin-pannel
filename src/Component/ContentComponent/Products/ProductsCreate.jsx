@@ -6,9 +6,9 @@ function ProductCreate() {
         initialValues: {
             title: "",
             price: "",
-            category: "shoes",
-            brand: "nike",
-            color: "red",
+            image: "",
+            instock: "YES",
+            description: ""
         },
         validate: (values) => {
             let error = {};
@@ -25,6 +25,14 @@ function ProductCreate() {
                 error.price = "Enter a valid price";
             }
 
+            if (values.image === "") {
+                error.image = "Please enter image URL";
+            }
+
+            if (values.description === "") {
+                error.description = "Please enter product description";
+            }
+
             return error;
         },
         onSubmit: (values) => {
@@ -34,8 +42,9 @@ function ProductCreate() {
 
     return (
         <div className="bg-gray-100 min-h-screen flex justify-center items-center">
-            <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-5xl">
-                <form onSubmit={formik.handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-4xl">
+                <form onSubmit={formik.handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
                     {/* Product Title */}
                     <div>
                         <label className="block text-gray-600 mb-1">Product Title</label>
@@ -48,7 +57,9 @@ function ProductCreate() {
                             placeholder="Enter product name"
                             className="w-full border border-gray-400 rounded px-3 py-2"
                         />
-                        {formik.touched.title ? <span className="text-red-500 block truncate">{formik.errors.title}</span> : null}
+                        {formik.touched.title && formik.errors.title ? (
+                            <span className="text-red-500 text-sm">{formik.errors.title}</span>
+                        ) : null}
                     </div>
 
                     {/* Price */}
@@ -63,59 +74,64 @@ function ProductCreate() {
                             placeholder="Enter product price"
                             className="w-full border border-gray-400 rounded px-3 py-2"
                         />
-                        {formik.touched.price ? <span className="text-red-500 block truncate">{formik.errors.price}</span> : null}
+                        {formik.touched.price && formik.errors.price ? (
+                            <span className="text-red-500 text-sm">{formik.errors.price}</span>
+                        ) : null}
                     </div>
 
-                    {/* Category */}
+                    {/* Image URL */}
                     <div>
-                        <label className="block text-gray-600 mb-1">Category</label>
-                        <select
-                            name="category"
-                            value={formik.values.category}
+                        <label className="block text-gray-600 mb-1">Image URL</label>
+                        <input
+                            type="text"
+                            name="image"
+                            value={formik.values.image}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            placeholder="Enter image URL"
+                            className="w-full border border-gray-400 rounded px-3 py-2"
+                        />
+                        {formik.touched.image && formik.errors.image ? (
+                            <span className="text-red-500 text-sm">{formik.errors.image}</span>
+                        ) : null}
+                    </div>
+
+                    {/* In Stock */}
+                    <div>
+                        <label className="block text-gray-600 mb-1">Instock</label>
+                        <select
+                            name="instock"
+                            value={formik.values.instock}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+
                             className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
                         >
-                            <option value="shoes">Shoes</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="accessory">Accessory</option>
+                            <option disabled value="">Select Your instock</option>
+                            <option value="YES">In stock</option>
+                            <option value="NO">No stock</option>
                         </select>
                     </div>
 
-                    {/* Brand */}
-                    <div>
-                        <label className="block text-gray-600 mb-1">Brand</label>
-                        <select
-                            name="brand"
-                            value={formik.values.brand}
+                    {/* Description */}
+                    <div className="md:col-span-2">
+                        <label className="block text-gray-600 mb-1">Description</label>
+                        <textarea
+                            name="description"
+                            value={formik.values.description}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
-                        >
-                            <option value="nike">Nike</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="puma">Puma</option>
-                        </select>
-                    </div>
-
-                    {/* Color */}
-                    <div>
-                        <label className="block text-gray-600 mb-1">Color</label>
-                        <select
-                            name="color"
-                            value={formik.values.color}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
-                        >
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="black">Black</option>
-                        </select>
+                            placeholder="Enter product description"
+                            className="w-full border border-gray-400 rounded px-3 py-2"
+                            rows="4"
+                        />
+                        {formik.touched.description && formik.errors.description ? (
+                            <span className="text-red-500 text-sm">{formik.errors.description}</span>
+                        ) : null}
                     </div>
 
                     {/* Submit */}
-                    <div className="md:col-span-3 flex justify-center">
+                    <div className="md:col-span-2 flex justify-center">
                         <button
                             type="submit"
                             className={`mt-4 hover:bg-blue-700 ${!formik.isValid ? "bg-blue-400" : "bg-blue-600"} text-white font-semibold px-6 py-2 rounded shadow`}

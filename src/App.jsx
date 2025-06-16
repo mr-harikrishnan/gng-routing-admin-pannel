@@ -6,8 +6,9 @@ import Products from "./Component/ContentComponent/Products/Products";
 import DashBoard from "./Component/ContentComponent/DashBoard/DashBoard";
 import UserCreate from "./Component/ContentComponent/Users/UserCreate";
 import { useState } from "react";
-import Veiw from "./Component//Veiw/Veiw";
+;
 import ProductCreate from "./Component/ContentComponent/Products/ProductsCreate";
+import VeiwProduct from "./Component/ContentComponent/Products/VeiwProduct";
 
 function App() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -35,7 +36,7 @@ function App() {
               <Route path="/users" element={<Users></Users>} />
               <Route path="/products" element={<Products></Products>} />
               <Route path="/user-create" element={<UserCreate></UserCreate>}></Route>
-              <Route path="/veiw/:id" element={<Veiw></Veiw>}></Route>
+              <Route path="/product-view/:id" element={<VeiwProduct></VeiwProduct>}></Route>
               <Route path="/product-create" element={<ProductCreate></ProductCreate>}></Route>
             </Routes>
           </div>
