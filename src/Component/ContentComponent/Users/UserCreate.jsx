@@ -11,6 +11,43 @@ function UserCreate() {
             state: "KL",
             city: "MD",
         },
+        validate: (values) => {
+
+            let error = {}
+
+            if (values.username === "") {
+                error.username = "Please Enter username"
+            }
+            else if (values.username.length < 3) {
+                error.username = "Username minimum 3 letters"
+
+            }
+
+
+            if (values.email === "") {
+                error.email = "Please Enter email"
+            }
+            else if (!(/^\S+@\S+\.\S+$/.test(values.email))) {
+                error.email = "Please enter valid email"
+            }
+
+
+
+            if (values.mobile === "") {
+                error.mobile = "Please Enter mobile"
+            }
+            else if (values.mobile.length < 10 || values.mobile.length > 10) {
+                error.mobile = "Mobile number should be 10 charecters"
+
+            }
+            else if (!(/^\d+$/.test(values.mobile))) {
+                error.mobile = "Mobile number should be only numbers"
+
+            }
+
+            return error;
+
+        },
         onSubmit: (values) => {
             console.log(values)
         }
@@ -28,9 +65,12 @@ function UserCreate() {
                             name="username"
                             value={formike.values.username}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
                             placeholder="Enter Your Name"
                             className="w-full border border-gray-400 rounded px-3 py-2"
                         />
+                        {formike.touched.username ? <span className=" max-w-xs block truncate text-red-500">{formike.errors.username}</span> : null}
+
                     </div>
 
                     {/* Email */}
@@ -41,9 +81,14 @@ function UserCreate() {
                             name="email"
                             value={formike.values.email}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
+
                             placeholder="Enter Your Email"
                             className="w-full border border-gray-400 rounded px-3 py-2"
                         />
+                        {formike.touched.email ? <span className=" max-w-xs block truncate text-red-500">{formike.errors.email}</span> : null}
+
+
                     </div>
 
                     {/* Phone */}
@@ -54,9 +99,14 @@ function UserCreate() {
                             name="mobile"
                             value={formike.values.mobile}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
+
                             placeholder="Enter Your Mobile No"
                             className="w-full border border-gray-400 rounded px-3 py-2"
                         />
+                        {formike.touched.mobile ? <span className=" max-w-xs block truncate text-red-500">{formike.errors.mobile}</span> : null}
+
+
                     </div>
 
                     {/* Country */}
@@ -66,6 +116,8 @@ function UserCreate() {
                             name="country"
                             value={formike.values.country}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
+
                             className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
                         >
                             <option disabled value="">Select Your Country</option>
@@ -81,6 +133,8 @@ function UserCreate() {
                             name="state"
                             value={formike.values.state}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
+
                             className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
                         >
                             <option disabled value="">Select Your State</option>
@@ -96,6 +150,8 @@ function UserCreate() {
                             name="city"
                             value={formike.values.city}
                             onChange={formike.handleChange}
+                            onBlur={formike.handleBlur}
+
                             className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
                         >
                             <option disabled value="">Select Your City</option>
@@ -108,10 +164,11 @@ function UserCreate() {
                     <div className="md:col-span-3 flex justify-center">
                         <button
                             type="submit"
-                            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow"
+                            className={`mt-4  hover:bg-blue-700 ${!formike.isValid ? "bg-blue-400" : "bg-blue-600"} text-white font-semibold px-6 py-2 rounded shadow`}
                         >
                             SUBMIT
                         </button>
+
                     </div>
                 </form>
             </div>
