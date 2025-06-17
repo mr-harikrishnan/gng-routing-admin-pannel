@@ -84,7 +84,7 @@ function Products() {
                     className="w-10 h-10 object-cover rounded"
                     src={product.image}
                     alt="product" />
-                  <span>{product.title}</span>
+                  <span>{product.title.slice(0,40)}...  </span>
                 </td>
                 <td className="py-3 px-6">{product.price}</td>
                 <td className="py-3 px-6 " >
