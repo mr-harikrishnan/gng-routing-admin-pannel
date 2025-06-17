@@ -14,7 +14,7 @@ function useProducts() {
   }, []);
 
   return {
-    products,
+    products,getData
   };
 }
 

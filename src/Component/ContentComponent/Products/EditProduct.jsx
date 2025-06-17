@@ -1,10 +1,9 @@
-import axios from "axios";
-import { useFormik } from "formik";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
-function ProductCreate() {
-    const navigate =useNavigate()
+function EditProduct() {
     const formik = useFormik({
         initialValues: {
             title: "",
@@ -40,15 +39,49 @@ function ProductCreate() {
         },
         onSubmit: async (values) => {
             try {
-                const createdData=await axios.post("https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products",values)
+                const updatedProduct = axios.put(`https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products/${id}`, values)
                 navigate("/products")
-                
             } catch (error) {
-                console.log(error);
-                
+                console.log(error)
             }
-        },
+        }
     });
+
+
+
+
+
+
+
+
+    // {EDIT FUNCTION}
+    const { id } = useParams()
+    const navigate=useNavigate()
+
+    let getProductInfo = async () => {
+        try {
+            const productData = await axios.get(`https://684fcb12e7c42cfd1795faf8.mockapi.io/adminpannelproject/products/${id}`)
+            formik.setValues(productData.data)  //superb
+        } catch (error) {
+            console.log("error")
+        }
+    }
+
+    useEffect(() => {
+        getProductInfo()
+    }, [])
+
+
+
+
+
+
+    // {EDIT FUNCTION}
+
+
+
+
+
 
 
 
@@ -59,7 +92,7 @@ function ProductCreate() {
         <div className="bg-gray-100 min-h-screen flex justify-center items-center">
             <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-4xl">
                 <form onSubmit={formik.handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    
+
                     {/* Product Title */}
                     <div>
                         <label className="block text-gray-600 mb-1">Product Title</label>
@@ -123,8 +156,8 @@ function ProductCreate() {
                             className="w-full border border-gray-400 rounded px-3 py-2 text-gray-600"
                         >
                             <option disabled value="">Select Your instock</option>
-                            <option value={true}>In stock</option>
-                            <option value={false}>No stock</option>
+                            <option value="YES">In stock</option>
+                            <option value="NO">No stock</option>
                         </select>
                     </div>
 
@@ -160,4 +193,4 @@ function ProductCreate() {
     );
 }
 
-export default ProductCreate;
+export default EditProduct

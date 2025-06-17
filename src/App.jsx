@@ -9,6 +9,7 @@ import { useState } from "react";
 ;
 import ProductCreate from "./Component/ContentComponent/Products/ProductsCreate";
 import VeiwProduct from "./Component/ContentComponent/Products/VeiwProduct";
+import EditProduct from "./Component/ContentComponent/Products/EditProduct";
 
 function App() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
@@ -36,8 +37,9 @@ function App() {
               <Route path="/users" element={<Users></Users>} />
               <Route path="/products" element={<Products></Products>} />
               <Route path="/user-create" element={<UserCreate></UserCreate>}></Route>
-              <Route path="/product-view/:id" element={<VeiwProduct></VeiwProduct>}></Route>
               <Route path="/product-create" element={<ProductCreate></ProductCreate>}></Route>
+              <Route path="/product-view/:id" element={<VeiwProduct></VeiwProduct>}></Route>
+              <Route path="/product-edit/:id" element={<EditProduct></EditProduct>}></Route>
             </Routes>
           </div>
         </div>

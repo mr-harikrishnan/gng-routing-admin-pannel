@@ -7,7 +7,7 @@ function AsideMenuBar({ isSideBarOpen, onCloseSidebar }) {
   return (
     <aside
       id="default-sidebar"
-      className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform transform ${isSideBarOpen ? "translate-x-0" : "-translate-x-full"
+      className={`fixed top-0 left-0 z-40 w-64 h-full transition-transform transform ${isSideBarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 md:w-[15%]`}
       aria-label="Sidebar"
       ref={asideMenuBarRef}
